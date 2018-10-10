@@ -17,6 +17,7 @@ ZSH_THEME_GIT_PROMPT_DIVERGED=" ⬍"
 POWERLINE_USER_NAME="%n@%M"
 POWERLINE_CURRENT_PATH="%~"
 POWERLINE_GIT="%F{white}"$'$(git_prompt_info)$(git_prompt_status)'"%f"
+POWERLINE_VENV="%F{white}"$'$(virtualenv_prompt_info)'"%f"
 
 if [ $(id -u) -eq 0 ]; then
     POWERLINE_SEC1_FG=%F{yellow}
@@ -24,6 +25,6 @@ else
     POWERLINE_SEC1_FG=%F{blue}
 fi
 
-PROMPT="%B$POWERLINE_SEC1_FG$POWERLINE_USER_NAME ▶ %F{magenta}$POWERLINE_CURRENT_PATH ▶%f$POWERLINE_GIT%f%k
+PROMPT="%B$POWERLINE_SEC1_FG$POWERLINE_USER_NAME ▶ %F{magenta}$POWERLINE_CURRENT_PATH$POWERLINE_VENV ▶%f$POWERLINE_GIT%f%k
 %F{yellow}%D{%Y-%m-%d %H:%M:%S} ▶ %(?.%F{green}✔.%F{red}✘ %?)%f%k ▶ %b"
 
